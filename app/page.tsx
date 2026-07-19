@@ -3,7 +3,7 @@ import { TechBanner } from "../components/TechBanner";
 import { ScrollReveal } from "../components/ScrollReveal";
 import { Formacoes } from "../components/Formacoes";
 import { TerminalTutores } from "../components/TerminalTutores";
-import { Depoimentos } from "../components/Depoimentos";
+import { Depoimentos } from "../components/Depoimentos";import  CompanyBanner  from "../components/CompanyBanner";
 import { CustomCursor } from "../components/CustomCursor";
 import { Footer } from "../components/Footer";
 import { BackgroundEffects } from "../components/BackgroundEffects";
@@ -65,6 +65,8 @@ export default function Home() {
       <Formacoes />
       <TerminalTutores />
       <Depoimentos />
+
+      <CompanyBanner/>
       
       {/* Seção Final de Conversão com Botão Magnético */}
       <section className="py-32 px-4 max-w-4xl mx-auto text-center relative z-10">

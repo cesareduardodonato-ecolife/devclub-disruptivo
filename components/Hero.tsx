@@ -47,7 +47,7 @@ export const Hero = () => {
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
         >
           <p className="text-lg md:text-2xl text-zinc-200 mb-10 max-w-3xl mx-auto font-medium leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
-            Você está preso na Matrix dos tutoriais intermináveis? Desperte. O DevClub é a falha no sistema: a rota direta e brutal para você reescrever o código da sua própria carreira.
+            Você está preso na Matrix dos tutoriais intermináveis? Desperte. O DevClub é a solução do sistema: a rota direta e brutal para você reescrever o código da sua própria carreira.
           </p>
         </motion.div>
 

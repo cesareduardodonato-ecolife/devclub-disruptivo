@@ -76,6 +76,14 @@ export const TerminalTutores = () => {
               className="mt-4 text-green-400 flex items-center"
             >
               <span className="mr-2">visitor@devclub:~$</span>
+              {/* Linha final de Status */}
+<div className="mt-6 border-t border-green-800/50 pt-4">
+  <p className="font-mono text-sm md:text-base text-[#00FF41] animate-pulse drop-shadow-[0_0_5px_rgba(0,255,65,0.8)]">
+    <span className="text-zinc-400 mr-2">[Sistema] Status:</span>
+    &gt; Lembre-se: Não existe almoço grátis!
+    <span className="inline-block w-2 h-4 bg-[#00FF41] ml-1 animate-ping"></span>
+  </p>
+</div>
               <motion.div
                 // Animação de piscar (opacity 1 -> 0 infinito)
                 animate={{ opacity: [1, 0] }}

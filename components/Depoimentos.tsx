@@ -12,7 +12,7 @@ const depoimentos = [
   },
   {
     nome: "Sarah Linhares",
-    cargo: "Full Stack Engineer na gringa",
+    cargo: "Full Stack Engineer no Canadá",
     texto: "O diferencial não é só o código, é como eles te ensinam a pensar como um engenheiro e a se vender para o mercado. O módulo de carreira mudou meu jogo. Hoje ganho em dólar.",
   },
   {
