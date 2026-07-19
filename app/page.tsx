@@ -1,97 +1,64 @@
 import { Hero } from "../components/Hero";
-import { TechBanner } from "../components/TechBanner";
-import { ScrollReveal } from "../components/ScrollReveal";
-import { Formacoes } from "../components/Formacoes";
-import { TerminalTutores } from "../components/TerminalTutores";
-import { Depoimentos } from "../components/Depoimentos";import  CompanyBanner  from "../components/CompanyBanner";
-import { CustomCursor } from "../components/CustomCursor";
-import { Footer } from "../components/Footer";
 import { BackgroundEffects } from "../components/BackgroundEffects";
-import { ScrollProgress } from "../components/ScrollProgress";
-import { MagneticElement } from "../components/MagneticElement";
-import { TiltCard } from "../components/TiltCard";
+import TerminalTutores from "../components/TerminalTutores";
+import CompanyBanner from "../components/CompanyBanner";
 
 export default function Home() {
   return (
-    <main className="min-h-screen text-white overflow-hidden md:cursor-none relative">
+    // overflow-x-hidden é o segredo aqui: impede que qualquer componente vaze para os lados no celular
+    <main className="relative min-h-screen bg-black text-white overflow-x-hidden font-sans w-full flex flex-col">
       
-      {/* Efeitos Globais */}
+      {/* Efeito Matrix Global de Fundo */}
       <BackgroundEffects />
-      <ScrollProgress />
-      <CustomCursor />
-      
-      {/* Hero com o novo fundo Spotlight embutido */}
-      <Hero />
-      <TechBanner />
 
-      {/* Seção de Números com Efeito 3D Tilt */}
-      <section className="py-32 px-4 max-w-7xl mx-auto relative z-10">
-        <ScrollReveal>
-          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
-            Nossos <span className="text-green-400">Números</span>
+      {/* Container principal de conteúdo com z-10 para ficar acima do Matrix */}
+      <div className="relative z-10 flex flex-col w-full">
+        
+        {/* 1. Hero Section */}
+        <Hero />
+
+        {/* 2. Seção de Depoimentos */}
+        <section className="w-full max-w-6xl mx-auto px-4 py-16 md:py-24">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-[#00FF41]">
+            Nossos Alunos Estão no Topo
           </h2>
-        </ScrollReveal>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Card de Depoimento 1 */}
+            <div className="bg-zinc-900/70 backdrop-blur-md border border-[#00FF41]/20 p-6 rounded-xl shadow-[0_0_15px_rgba(0,255,65,0.05)] hover:border-[#00FF41]/50 transition-colors">
+              <p className="text-gray-300 italic mb-4">
+                "A didática do DevClub mudou minha forma de ver a programação. Em poucos meses consegui minha primeira vaga."
+              </p>
+              <p className="text-[#00FF41] font-bold">- João P.</p>
+            </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <ScrollReveal delay={0.1}>
-            <TiltCard>
-              <div className="h-full bg-zinc-900/60 backdrop-blur-md border border-zinc-800 p-8 rounded-2xl hover:border-green-500/50 transition-colors shadow-2xl">
-                <h3 className="text-5xl font-bold text-white mb-2">+5.000</h3>
-                <p className="text-zinc-400">Alunos Formados</p>
-              </div>
-            </TiltCard>
-          </ScrollReveal>
+            {/* Card de Depoimento 2 */}
+            <div className="bg-zinc-900/70 backdrop-blur-md border border-[#00FF41]/20 p-6 rounded-xl shadow-[0_0_15px_rgba(0,255,65,0.05)] hover:border-[#00FF41]/50 transition-colors">
+              <p className="text-gray-300 italic mb-4">
+                "Nunca vi uma comunidade tão engajada. O suporte dos tutores é o que faz a diferença no dia a dia."
+              </p>
+              <p className="text-[#00FF41] font-bold">- Maria S.</p>
+            </div>
 
-          <ScrollReveal delay={0.2}>
-            <TiltCard>
-              <div className="h-full bg-zinc-900/60 backdrop-blur-md border border-zinc-800 p-8 rounded-2xl hover:border-green-500/50 transition-colors shadow-2xl">
-                <h3 className="text-5xl font-bold text-white mb-2">+900</h3>
-                <p className="text-zinc-400">Empresas Parceiras</p>
-              </div>
-            </TiltCard>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.3}>
-            <TiltCard>
-              <div className="h-full bg-zinc-900/60 backdrop-blur-md border border-zinc-800 p-8 rounded-2xl hover:border-green-500/50 transition-colors shadow-2xl">
-                <h3 className="text-5xl font-bold text-white mb-2">100%</h3>
-                <p className="text-zinc-400">Foco no Mercado</p>
-              </div>
-            </TiltCard>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      <Formacoes />
-      <TerminalTutores />
-      <Depoimentos />
-
-      <CompanyBanner/>
-      
-      {/* Seção Final de Conversão com Botão Magnético */}
-      <section className="py-32 px-4 max-w-4xl mx-auto text-center relative z-10">
-        <ScrollReveal>
-          <h2 className="text-5xl md:text-6xl font-black mb-6 tracking-tight">
-            Pronto para dar o <span className="text-green-400">próximo passo?</span>
-          </h2>
-          <p className="text-zinc-400 mb-12 text-lg md:text-xl">
-            Junte-se à nossa comunidade e comece a construir o seu futuro como desenvolvedor hoje mesmo.
-          </p>
-          <div className="flex justify-center">
-            <MagneticElement>
-              <button className="bg-green-500 hover:bg-green-400 text-black font-extrabold py-5 px-12 rounded-full text-xl transition-all shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:shadow-[0_0_40px_rgba(34,197,94,0.8)] hover:scale-105 flex items-center gap-3">
-                Quero ser Full Stack
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </button>
-            </MagneticElement>
+            {/* Card de Depoimento 3 */}
+            <div className="bg-zinc-900/70 backdrop-blur-md border border-[#00FF41]/20 p-6 rounded-xl shadow-[0_0_15px_rgba(0,255,65,0.05)] hover:border-[#00FF41]/50 transition-colors">
+              <p className="text-gray-300 italic mb-4">
+                "Os projetos reais que construímos me deram a confiança exata que eu precisava para as entrevistas."
+              </p>
+              <p className="text-[#00FF41] font-bold">- Carlos E.</p>
+            </div>
           </div>
-        </ScrollReveal>
-      </section>
+        </section>
 
-      <Footer />
-      
+        {/* 3. Faixa Verde de Empresas (Exatamente abaixo dos depoimentos, como solicitado) */}
+        <CompanyBanner />
+
+        {/* 4. Terminal dos Tutores (Fechando a página) */}
+        <section className="w-full py-16 bg-gradient-to-b from-transparent to-zinc-950/90">
+          <TerminalTutores />
+        </section>
+
+      </div>
     </main>
   );
 }
