@@ -5,6 +5,7 @@ import { Hero } from "../components/Hero";
 import { BackgroundEffects } from "../components/BackgroundEffects";
 import TerminalTutores from "../components/TerminalTutores";
 import CompanyBanner from "../components/CompanyBanner";
+import Footer from "../components/Footer"; // <-- Footer de volta!
 
 // --- COMPONENTE: MOUSE VERDINHO CUSTOMIZADO ---
 const CustomCursor = () => {
@@ -54,7 +55,6 @@ const TiltCard = ({ children }: { children: React.ReactNode }) => {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
     
-    // Calcula a inclinação com base na posição do mouse
     const rotateX = ((y - centerY) / centerY) * -10;
     const rotateY = ((x - centerX) / centerX) * 10;
     
@@ -67,7 +67,7 @@ const TiltCard = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div
-      className="h-full rounded-xl bg-zinc-900/60 backdrop-blur-md border border-[#00FF41]/20 p-8 shadow-[0_0_15px_rgba(0,255,65,0.05)] hover:shadow-[0_0_30px_rgba(0,255,65,0.2)] hover:border-[#00FF41]/50 transition-all duration-200 ease-out flex flex-col justify-between"
+      className="h-full rounded-xl bg-zinc-900/40 backdrop-blur-sm border border-[#00FF41]/20 p-8 shadow-[0_0_15px_rgba(0,255,65,0.05)] hover:shadow-[0_0_30px_rgba(0,255,65,0.2)] hover:border-[#00FF41]/50 transition-all duration-200 ease-out flex flex-col justify-between"
       style={{ transform }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -80,20 +80,25 @@ const TiltCard = ({ children }: { children: React.ReactNode }) => {
 // --- PÁGINA PRINCIPAL ---
 export default function Home() {
   return (
-    // md:cursor-none esconde o cursor padrão no PC para o mouse verdinho aparecer sozinho
-    <main className="relative min-h-screen bg-[#050505] text-white overflow-x-hidden font-sans w-full flex flex-col md:cursor-none selection:bg-[#00FF41] selection:text-black">
+    <main className="relative min-h-screen text-white overflow-x-hidden font-sans w-full flex flex-col md:cursor-none selection:bg-[#00FF41] selection:text-black bg-black">
       
-      {/* O Mouse e o Fundo Matrix */}
+      {/* 1. O Mouse Customizado */}
       <CustomCursor />
-      <BackgroundEffects />
 
-      {/* Container de conteúdo */}
+      {/* 2. Fundo Matrix Corrigido (Fixo atrás de tudo com z-0) */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <BackgroundEffects />
+        {/* Overlay escuro para garantir que os textos fiquem legíveis em cima da chuva de código */}
+        <div className="absolute inset-0 bg-black/60"></div>
+      </div>
+
+      {/* 3. Container de conteúdo (z-10 para ficar ACIMA do Matrix) */}
       <div className="relative z-10 flex flex-col w-full">
         
-        {/* 1. Secão Inicial */}
+        {/* Hero Section */}
         <Hero />
 
-        {/* 2. Seção de Depoimentos (Agora com os Cards em 3D) */}
+        {/* Seção de Depoimentos */}
         <section className="w-full max-w-7xl mx-auto px-4 py-20 md:py-32">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-black mb-6 text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500 drop-shadow-lg uppercase tracking-tighter">
@@ -105,64 +110,63 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-            {/* Card 1 */}
             <TiltCard>
               <div>
                 <div className="text-[#00FF41] mb-6">
-                  {/* Ícone de Aspas */}
                   <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1.5.5 1.5 1.713L3 21z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.5c0 1.213-.5 1.713-1.5 1.713L15 21z"/></svg>
                 </div>
-                <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                <p className="text-gray-200 text-lg leading-relaxed mb-8">
                   "A didática do DevClub mudou minha forma de ver a programação. O conteúdo é direto, sem enrolação. Em poucos meses consegui minha primeira vaga."
                 </p>
               </div>
               <div>
                 <p className="text-[#00FF41] font-bold text-xl">João P.</p>
-                <p className="text-zinc-500 text-sm">Desenvolvedor Front-end</p>
+                <p className="text-zinc-400 text-sm">Desenvolvedor Front-end</p>
               </div>
             </TiltCard>
 
-            {/* Card 2 */}
             <TiltCard>
               <div>
                 <div className="text-[#00FF41] mb-6">
                   <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1.5.5 1.5 1.713L3 21z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.5c0 1.213-.5 1.713-1.5 1.713L15 21z"/></svg>
                 </div>
-                <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                <p className="text-gray-200 text-lg leading-relaxed mb-8">
                   "Nunca vi uma comunidade tão engajada. O suporte dos tutores é insano, eles te pegam pela mão, mas te ensinam a pensar como um dev sênior."
                 </p>
               </div>
               <div>
                 <p className="text-[#00FF41] font-bold text-xl">Maria S.</p>
-                <p className="text-zinc-500 text-sm">Engenheira de Software</p>
+                <p className="text-zinc-400 text-sm">Engenheira de Software</p>
               </div>
             </TiltCard>
 
-            {/* Card 3 */}
             <TiltCard>
               <div>
                 <div className="text-[#00FF41] mb-6">
                   <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1.5.5 1.5 1.713L3 21z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.5c0 1.213-.5 1.713-1.5 1.713L15 21z"/></svg>
                 </div>
-                <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                <p className="text-gray-200 text-lg leading-relaxed mb-8">
                   "Os projetos reais que construímos me deram a confiança exata que eu precisava. O terminal no final não é brincadeira: não existe almoço grátis."
                 </p>
               </div>
               <div>
                 <p className="text-[#00FF41] font-bold text-xl">Carlos E.</p>
-                <p className="text-zinc-500 text-sm">Desenvolvedor Full Stack</p>
+                <p className="text-zinc-400 text-sm">Desenvolvedor Full Stack</p>
               </div>
             </TiltCard>
           </div>
         </section>
 
-        {/* 3. A Faixa Verde Correndo */}
+        {/* Faixa de Empresas */}
         <CompanyBanner />
 
-        {/* 4. O Terminal Final */}
-        <section className="w-full py-20 bg-gradient-to-b from-transparent to-zinc-950">
+        {/* Terminal dos Tutores */}
+        <section className="w-full py-20 bg-gradient-to-b from-transparent to-zinc-950/80">
           <TerminalTutores />
         </section>
+
+        {/* Footer (Recuperado!) */}
+        <Footer />
 
       </div>
     </main>
