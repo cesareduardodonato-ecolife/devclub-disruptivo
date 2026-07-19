@@ -5,7 +5,7 @@ import { Hero } from "../components/Hero";
 import { BackgroundEffects } from "../components/BackgroundEffects";
 import TerminalTutores from "../components/TerminalTutores";
 import CompanyBanner from "../components/CompanyBanner";
-import Footer from "../components/Footer"; // <-- Footer de volta!
+import { Footer } from "../components/Footer"; // <-- Footer de volta!
 
 // --- COMPONENTE: MOUSE VERDINHO CUSTOMIZADO ---
 const CustomCursor = () => {
