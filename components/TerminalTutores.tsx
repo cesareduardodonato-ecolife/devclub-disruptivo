@@ -1,62 +1,46 @@
-'use client';
+"use client";
+import { useState, useEffect } from "react";
 
 export default function TerminalTutores() {
+  const [text, setText] = useState("");
+  const fullText = "Lembre-se, não existe almoço grátis!";
+
+  useEffect(() => {
+    let i = 0;
+    const timer = setInterval(() => {
+      if (i < fullText.length) {
+        setText(fullText.slice(0, i + 1));
+        i++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 100);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    // Container principal: w-full e px-4 garantem que não vai quebrar no celular!
-    <div className="w-full max-w-4xl mx-auto px-4 my-16">
-      
-      {/* Janela do Terminal */}
-      <div className="bg-[#0a0a0a] rounded-lg border border-zinc-800 shadow-[0_0_30px_rgba(0,255,65,0.15)] overflow-hidden">
-        
-        {/* Barra superior (Estilo macOS) */}
-        <div className="bg-zinc-900 px-4 py-3 flex items-center border-b border-zinc-800">
-          <div className="flex space-x-2">
-            <div className="w-3 h-3 rounded-full bg-red-500"></div>
-            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-            <div className="w-3 h-3 rounded-full bg-green-500"></div>
-          </div>
-          <div className="mx-auto text-zinc-500 text-xs font-mono select-none">
-            tutores@devclub:~
-          </div>
+    <div className="w-full max-w-4xl mx-auto p-4 md:p-8">
+      <div className="rounded-xl bg-zinc-900 border border-zinc-700 shadow-[0_0_50px_rgba(0,0,0,0.8)] overflow-hidden">
+        {/* Barra superior estilo Mac */}
+        <div className="bg-zinc-800 px-4 py-3 flex items-center gap-2 border-b border-zinc-700">
+          <div className="w-3 h-3 rounded-full bg-red-500"></div>
+          <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+          <div className="w-3 h-3 rounded-full bg-green-500"></div>
+          <span className="ml-4 text-zinc-400 text-sm font-mono hidden md:block">tutores@devclub: ~/root</span>
         </div>
-
-        {/* Conteúdo do Terminal */}
-        <div className="p-4 md:p-6 font-mono text-sm md:text-base text-gray-300">
-          
-          {/* Comando 1 */}
-          <div className="mb-6">
-            <p className="text-[#00FF41]">
-              <span className="text-green-700 mr-2">tutor@devclub:~$</span> ./iniciar_jornada.sh
-            </p>
-            <p className="ml-4 mt-2 opacity-80 leading-relaxed text-xs md:text-sm">
-              [&gt;] Inicializando ambiente de alta performance...<br/>
-              [&gt;] Carregando mentalidade de elite... <span className="text-[#00FF41] font-bold">OK</span><br/>
-              [&gt;] Removendo desculpas do sistema... <span className="text-[#00FF41] font-bold">OK</span>
-            </p>
+        
+        {/* Corpo do Terminal */}
+        <div className="p-6 md:p-10 bg-[#050505] min-h-[250px] font-mono text-lg md:text-2xl text-[#00FF41]">
+          <p>
+            <span className="text-blue-400">dev@sistema</span>:<span className="text-blue-400">~</span>$ ./iniciar_jornada.sh
+          </p>
+          <p className="mt-4 text-zinc-400">Iniciando protocolo de aceleração...</p>
+          <p className="mt-2 text-zinc-400">Carregando lógica pesada...</p>
+          <div className="mt-8 flex items-center">
+            <span className="mr-2 text-pink-500">&gt;</span>
+            <span className="text-white font-bold">{text}</span>
+            <span className="w-3 h-6 bg-[#00FF41] ml-1 animate-pulse"></span>
           </div>
-
-          {/* Comando 2 (Análise de Mercado) */}
-          <div className="mb-8">
-            <p className="text-[#00FF41]">
-              <span className="text-green-700 mr-2">tutor@devclub:~$</span> ./analise_de_mercado.sh
-            </p>
-            <p className="ml-4 mt-2 opacity-80 leading-relaxed text-xs md:text-sm">
-              [+] Vagas disponíveis no mercado: 100.000+<br />
-              [+] Desenvolvedores altamente qualificados: Insuficiente<br />
-              [+] Conclusão: A oportunidade está na mesa. Execução necessária.
-            </p>
-          </div>
-
-          {/* Linha Final de Status (O Grande Final) */}
-          <div className="mt-6 border-t border-green-900/50 pt-5">
-            <p className="text-[#00FF41] font-bold text-sm md:text-lg drop-shadow-[0_0_8px_rgba(0,255,65,0.8)] flex items-center">
-              <span className="text-zinc-500 mr-2 text-sm md:text-base font-normal">[Sistema]:</span>
-              &gt; Lembre-se, não existe almoço grátis!
-              {/* O cursor piscando */}
-              <span className="inline-block w-2.5 h-5 md:h-6 bg-[#00FF41] ml-2 animate-pulse"></span>
-            </p>
-          </div>
-
         </div>
       </div>
     </div>

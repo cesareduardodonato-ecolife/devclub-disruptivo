@@ -5,9 +5,9 @@ import { Hero } from "../components/Hero";
 import { BackgroundEffects } from "../components/BackgroundEffects";
 import TerminalTutores from "../components/TerminalTutores";
 import CompanyBanner from "../components/CompanyBanner";
-import { Footer } from "../components/Footer"; // <-- Footer de volta!
+import Footer from "../components/Footer";
 
-// --- COMPONENTE: MOUSE VERDINHO CUSTOMIZADO ---
+// COMPONENTE: MOUSE VERDE CUSTOMIZADO
 const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
@@ -34,9 +34,7 @@ const CustomCursor = () => {
     <div 
       className="fixed pointer-events-none z-[9999] hidden md:block"
       style={{ 
-        left: `${position.x}px`, 
-        top: `${position.y}px`,
-        transform: 'translate(-50%, -50%)'
+        left: `${position.x}px`, top: `${position.y}px`, transform: 'translate(-50%, -50%)' 
       }}
     >
       <div className="w-6 h-6 bg-[#00FF41]/40 border-2 border-[#00FF41] rounded-full shadow-[0_0_15px_rgba(0,255,65,0.8)] transition-transform duration-75 ease-out" />
@@ -44,7 +42,7 @@ const CustomCursor = () => {
   );
 };
 
-// --- COMPONENTE: CARDS DE DEPOIMENTO COM EFEITO 3D (TILT) ---
+// COMPONENTE: CARDS DE DEPOIMENTO COM EFEITO 3D (TILT)
 const TiltCard = ({ children }: { children: React.ReactNode }) => {
   const [transform, setTransform] = useState("");
 
@@ -77,28 +75,25 @@ const TiltCard = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-// --- PÁGINA PRINCIPAL ---
+// PÁGINA PRINCIPAL COMPLETA
 export default function Home() {
   return (
     <main className="relative min-h-screen text-white overflow-x-hidden font-sans w-full flex flex-col md:cursor-none selection:bg-[#00FF41] selection:text-black bg-black">
       
-      {/* 1. O Mouse Customizado */}
+      {/* O Mouse Customizado */}
       <CustomCursor />
 
-      {/* 2. Fundo Matrix Corrigido (Fixo atrás de tudo com z-0) */}
+      {/* Fundo Matrix Fixo atrás de tudo */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <BackgroundEffects />
-        {/* Overlay escuro para garantir que os textos fiquem legíveis em cima da chuva de código */}
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
 
-      {/* 3. Container de conteúdo (z-10 para ficar ACIMA do Matrix) */}
+      {/* Container de conteúdo (z-10 para ficar ACIMA da chuva de código) */}
       <div className="relative z-10 flex flex-col w-full">
         
-        {/* Hero Section */}
         <Hero />
 
-        {/* Seção de Depoimentos */}
         <section className="w-full max-w-7xl mx-auto px-4 py-20 md:py-32">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-black mb-6 text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500 drop-shadow-lg uppercase tracking-tighter">
@@ -157,15 +152,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Faixa de Empresas */}
         <CompanyBanner />
 
-        {/* Terminal dos Tutores */}
         <section className="w-full py-20 bg-gradient-to-b from-transparent to-zinc-950/80">
           <TerminalTutores />
         </section>
 
-        {/* Footer (Recuperado!) */}
         <Footer />
 
       </div>
