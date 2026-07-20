@@ -13,7 +13,7 @@ export const MagneticElement = ({ children }: { children: React.ReactNode }) => 
     const middleX = clientX - (left + width / 2);
     const middleY = clientY - (top + height / 2);
     
-    // O fator 0.2 define a força do imã (para não ficar exagerado)
+    // O fator 0.2 define a força do imã 
     setPosition({ x: middleX * 0.2, y: middleY * 0.2 });
   };
 

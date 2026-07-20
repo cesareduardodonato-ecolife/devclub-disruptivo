@@ -1,10 +1,10 @@
 'use client';
 
 export default function CompanyBanner() {
-  // Lista de empresas multiplicada para garantir que a tela sempre fique preenchida durante a rolagem
+  // Lista de empresas 
   const companies = [
-    "Nubank", "Itaú", "Mercado Livre", "iFood", "Google", "Amazon", "Microsoft", "XP Investimentos", "PicPay", "Creditas",
-    "Nubank", "Itaú", "Mercado Livre", "iFood", "Google", "Amazon", "Microsoft", "XP Investimentos", "PicPay", "Creditas"
+    "Nubank", "Itaú", "Mercado Livre", "iFood", "Google", "Amazon", "Microsoft", "XP Investimentos", "PicPay", "Creditas", "Banco Santander",
+    "Nubank", "Itaú", "Mercado Livre", "iFood", "Google", "Amazon", "Microsoft", "XP Investimentos", "PicPay", "Creditas", "Banco Santander",
   ];
 
   return (

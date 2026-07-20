@@ -15,9 +15,9 @@ const MatrixRain = () => {
     canvas.height = window.innerHeight;
 
     // As letras exatas que vão chover
-    const letters = "DEVCLUB";
+    const letters = "DevClub";
     const matrix = letters.split("");
-    const fontSize = 22; // Aumentado para ficar mais claro
+    const fontSize = 22; // mais claro
     const columns = canvas.width / fontSize;
     const drops: number[] = [];
 
@@ -26,11 +26,11 @@ const MatrixRain = () => {
     }
 
     const draw = () => {
-      // Ajuste no Fade para as letras ficarem mais nítidas e não borrarem
+      // Fade para as letras ficarem mais nítidas e não borrarem
       ctx.fillStyle = "rgba(5, 5, 5, 0.15)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      ctx.fillStyle = "#4ade80"; // Verde mais claro/brilhante (green-400)
+      ctx.fillStyle = "#4ade80"; 
       ctx.font = `bold ${fontSize}px monospace`;
 
       for (let i = 0; i < drops.length; i++) {
@@ -77,10 +77,10 @@ export const BackgroundEffects = () => {
       {/* Fundo ultra escuro base */}
       <div className="fixed inset-0 z-[-4] bg-[#050505]" />
       
-      {/* A Chuva Matrix Global que criamos acima */}
+      {/* A Chuva Matrix Global */}
       <MatrixRain />
       
-      {/* Grade Sutil por cima da chuva para dar textura */}
+      {/* Grade Sutil */}
       <div className="fixed inset-0 z-[-2] h-full w-full bg-[linear-gradient(to_right,#4f4f4f1a_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f1a_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
       
       {/* Luzes difusas nos cantos */}

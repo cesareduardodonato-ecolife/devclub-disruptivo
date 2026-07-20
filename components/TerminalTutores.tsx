@@ -14,7 +14,9 @@ const linhas = [
   { id: 6, type: "info", text: "    -> Status: Online 24/7. Ninguém fica para trás.", delay: 4.4, duration: 0.1 },
   { id: 7, type: "cmd", text: "visitor@devclub:~$ echo $OBJETIVO", delay: 5.5, duration: 1 },
   { id: 8, type: "highlight", text: "> \"Te colocar nas melhores vagas, custe o que custar.\"", delay: 6.8, duration: 0.1 },
+  { id: 9, type: "info", text: "    -> Status: Lembre-se. Não existe almoço grátis.", delay: 7.2, duration: 0.1 },
 ];
+
 
 export const TerminalTutores = () => {
   return (
@@ -40,19 +42,19 @@ export const TerminalTutores = () => {
             <span className="ml-4 text-xs text-zinc-500 font-mono hidden md:block">root@devclub:~</span>
           </div>
 
-          {/* Corpo do Terminal (Tela preta) */}
+          {/* Tela do Terminal (Tela preta) */}
           <div className="p-4 md:p-8 font-mono text-xs md:text-base flex flex-col gap-3 min-h-[320px]">
             {linhas.map((linha) => (
               <motion.div
                 key={linha.id}
-                // Animação mágica: começa com largura 0 e vai até 100%
+                // largura 0 e vai até 100%
                 initial={{ opacity: 0, width: 0 }}
                 whileInView={{ opacity: 1, width: "100%" }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{
                   delay: linha.delay,
                   duration: linha.duration,
-                  // Comandos parecem digitados (linear), textos de sistema aparecem de vez
+                  // Comandos digitados 
                   ease: linha.type === "cmd" ? "linear" : "easeOut"
                 }}
                 className={`whitespace-nowrap overflow-hidden ${
@@ -67,7 +69,7 @@ export const TerminalTutores = () => {
               </motion.div>
             ))}
 
-            {/* O Bloco do cursor piscando no final */}
+            {/* O cursor piscando no final */}
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}

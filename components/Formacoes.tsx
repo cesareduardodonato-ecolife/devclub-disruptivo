@@ -23,19 +23,19 @@ const cursos = [
   }
 ];
 
-// Sub-componente: O Card 3D
+// O Card 3D
 const TiltCard = ({ item, index }: { item: any; index: number }) => {
   const ref = useRef<HTMLDivElement>(null);
 
-  // Valores de movimento do framer-motion
+  // framer-motion
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  // Deixa o movimento suave (efeito mola)
+  //  (efeito mola)
   const mouseXSpring = useSpring(x, { stiffness: 300, damping: 30 });
   const mouseYSpring = useSpring(y, { stiffness: 300, damping: 30 });
 
-  // Transforma o movimento do mouse em rotação (limite de 15 graus)
+  // movimento do mouse em rotação 
   const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["15deg", "-15deg"]);
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-15deg", "15deg"]);
 
@@ -53,14 +53,14 @@ const TiltCard = ({ item, index }: { item: any; index: number }) => {
   };
 
   const handleMouseLeave = () => {
-    // Volta pro centro quando o mouse sai
+    // centro quando o mouse sai
     x.set(0);
     y.set(0);
   };
 
   return (
     <ScrollReveal delay={index * 0.2}>
-      {/* O container precisa de perspective para o 3D funcionar */}
+      {/* O container para o 3D funcionar */}
       <div style={{ perspective: "1000px" }} className="h-full">
         <motion.div
           ref={ref}
@@ -73,10 +73,10 @@ const TiltCard = ({ item, index }: { item: any; index: number }) => {
           }}
           className="relative h-full bg-zinc-900 border border-zinc-800 rounded-2xl p-8 hover:border-green-500/50 transition-colors group cursor-crosshair"
         >
-          {/* Efeito de holograma/luz que aparece no hover */}
+          {/* Efeito de holograma */}
           <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 via-green-500/0 to-green-500/10 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl pointer-events-none" />
 
-          {/* O transform: translateZ(50px) é o que faz o conteúdo saltar pra fora da tela */}
+          {/* conteúdo saltando pra fora da tela */}
           <div style={{ transform: "translateZ(50px)" }} className="relative z-10 flex flex-col h-full transform-style-3d">
             <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-green-500/10 group-hover:bg-green-500/20 transition-colors">
               <item.icon className="w-8 h-8 text-green-400" />

@@ -3,7 +3,7 @@
 import { Star, Quote } from "lucide-react";
 import { ScrollReveal } from "./ScrollReveal";
 
-// Array com os dados inventados (Regra 3 do concurso)
+// Array com os dados fictícios
 const depoimentos = [
   {
     nome: "Thiago Mendes",
@@ -25,7 +25,7 @@ const depoimentos = [
 export const Depoimentos = () => {
   return (
     <section className="py-24 px-4 relative max-w-7xl mx-auto">
-      {/* Efeito de luz no fundo para dar profundidade */}
+      {/* Efeito de luz no fundo */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-green-500/5 blur-[150px] rounded-full pointer-events-none" />
 
       <ScrollReveal>
@@ -33,7 +33,7 @@ export const Depoimentos = () => {
           O que dizem nossos <span className="text-green-400">Alunos</span>
         </h2>
         <p className="text-zinc-400 text-center mb-16 max-w-2xl mx-auto relative z-10">
-          Histórias reais (que para este teste são inventadas) de pessoas que transformaram suas vidas através do código.
+          Histórias reais (que para este teste/concurso são inventadas) de pessoas que transformaram suas vidas através do DevClub.
         </p>
       </ScrollReveal>
 
@@ -57,7 +57,7 @@ export const Depoimentos = () => {
               </p>
               
               <div className="flex items-center gap-4">
-                {/* Avatar genérico criado com CSS */}
+                {/* Avatar genérico CSS */}
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center text-black font-bold text-xl">
                   {depoimento.nome.charAt(0)}
                 </div>

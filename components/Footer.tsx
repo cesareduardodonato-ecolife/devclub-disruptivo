@@ -5,14 +5,14 @@ import { ScrollReveal } from "./ScrollReveal";
 export const Footer = () => {
   return (
     <footer className="border-t border-zinc-800 bg-[#050505] pt-16 pb-8 relative overflow-hidden">
-      {/* Linha de luz neon no topo do Footer */}
+      {/* Linha de luz neon  do Footer */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-green-500/50 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4">
         <ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             
-            {/* Coluna 1: Logo e Missão */}
+            {/* Logo e Missão */}
             <div className="col-span-1">
               <h3 className="text-3xl font-black text-white mb-4 tracking-tighter">
                 DEV<span className="text-green-400">CLUB</span>
@@ -22,7 +22,7 @@ export const Footer = () => {
               </p>
             </div>
 
-            {/* Coluna 2: Links Institucionais */}
+            {/* Links Institucionais */}
             <div>
               <h4 className="text-white font-bold mb-6">Institucional</h4>
               <ul className="space-y-3 text-sm text-zinc-400">
@@ -33,7 +33,7 @@ export const Footer = () => {
               </ul>
             </div>
 
-            {/* Coluna 3: Suporte e Legal */}
+            {/* Suporte */}
             <div>
               <h4 className="text-white font-bold mb-6">Suporte</h4>
               <ul className="space-y-3 text-sm text-zinc-400">
@@ -44,7 +44,7 @@ export const Footer = () => {
               </ul>
             </div>
 
-            {/* Coluna 4: Redes Sociais (SVGs blindados contra erros) */}
+            {/* Redes Sociais */}
             <div>
               <h4 className="text-white font-bold mb-6">Siga o DevClub</h4>
               <div className="flex gap-4">
@@ -76,7 +76,7 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Linha de Direitos Autorais */}
+          {/* Direitos Autorais */}
           <div className="border-t border-zinc-800/50 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs md:text-sm text-zinc-500">
             <p>© {new Date().getFullYear()} DevClub. Todos os direitos reservados.</p>
             <p>

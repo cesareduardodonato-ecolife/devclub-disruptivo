@@ -10,7 +10,7 @@ export const CustomCursor = () => {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
   
-  // Física da "Mola" para o anel de fora (efeito de rastro/delay)
+  // Física da "Mola" 
   const springConfig = { damping: 25, stiffness: 200, mass: 0.5 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
@@ -38,7 +38,7 @@ export const CustomCursor = () => {
 
   return (
     <>
-      {/* 1. O ponto central exato (segue instantaneamente) */}
+      {/* O ponto central exato */}
       <motion.div
         className="fixed top-0 left-0 w-3 h-3 bg-green-400 rounded-full pointer-events-none z-[9999] hidden md:block mix-blend-screen"
         style={{
@@ -50,7 +50,7 @@ export const CustomCursor = () => {
         }}
       />
       
-      {/* 2. O anel/aura neon de fora (segue com física de mola) */}
+      {/* Mouse neon de fora (mola) */}
       <motion.div
         className="fixed top-0 left-0 w-10 h-10 border-2 border-green-500/50 rounded-full shadow-[0_0_15px_rgba(34,197,94,0.6)] pointer-events-none z-[9998] hidden md:block transition-opacity duration-300"
         style={{
