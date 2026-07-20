@@ -1,28 +1,33 @@
-"use client";
+'use client';
 
 export default function CompanyBanner() {
-  const companies = ["Google", "Amazon", "Itaú", "Nubank", "Mercado Livre", "Microsoft", "Ifood", "Totvs"];
-  
+  // Lista de empresas multiplicada para garantir que a tela sempre fique preenchida durante a rolagem
+  const companies = [
+    "Nubank", "Itaú", "Mercado Livre", "iFood", "Google", "Amazon", "Microsoft", "XP Investimentos", "PicPay", "Creditas",
+    "Nubank", "Itaú", "Mercado Livre", "iFood", "Google", "Amazon", "Microsoft", "XP Investimentos", "PicPay", "Creditas"
+  ];
+
   return (
-    <div className="w-full bg-[#00FF41] py-4 overflow-hidden relative rotate-2 scale-110 my-16 shadow-[0_0_30px_rgba(0,255,65,0.3)]">
-      <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(0%); }
-          100% { transform: translateX(-33.33%); }
-        }
-        .animate-marquee {
-          display: flex;
-          animation: marquee 20s linear infinite;
-        }
-      `}</style>
-      
-      <div className="animate-marquee whitespace-nowrap">
-        {[...companies, ...companies, ...companies].map((company, index) => (
-          <span key={index} className="text-black font-black text-2xl md:text-3xl mx-8 uppercase tracking-widest">
-            {company}
+    <div className="w-full bg-[#00FF41] py-3 overflow-hidden relative flex z-10 shadow-[0_0_15px_rgba(0,255,65,0.5)]">
+      <div className="animate-marquee whitespace-nowrap flex font-mono text-black font-extrabold text-lg md:text-xl items-center tracking-wider">
+        {companies.map((company, index) => (
+          <span key={index} className="mx-8 flex items-center">
+            {company} <span className="opacity-40 ml-16 text-sm">•</span>
           </span>
         ))}
       </div>
+      {/* CSS embutido exclusivo para esse componente para garantir a rolagem perfeita */}
+      <style jsx>{`
+        @keyframes marquee {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          animation: marquee 25s linear infinite;
+          /* O width precisa ser largo o suficiente para conter o dobro dos itens e rolar suavemente */
+          min-width: 200%; 
+        }
+      `}</style>
     </div>
   );
 }
