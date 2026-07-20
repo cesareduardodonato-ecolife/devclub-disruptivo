@@ -25,7 +25,7 @@ export default function Home() {
       <Hero />
       <TechBanner />
 
-      {/* Seção de Números com Efeito 3D Tilt */}
+      {/* Efeito 3D Tilt */}
       <section className="py-32 px-4 max-w-7xl mx-auto relative z-10">
         <ScrollReveal>
           <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
