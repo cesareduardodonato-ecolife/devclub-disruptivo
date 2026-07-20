@@ -5,7 +5,6 @@ import { Formacoes } from "../components/Formacoes";
 import { TerminalTutores } from "../components/TerminalTutores";
 import { Depoimentos } from "../components/Depoimentos";
 import { CustomCursor } from "../components/CustomCursor";
-import CompanyBanner from '@/components/CompanyBanner'
 import { Footer } from "../components/Footer";
 import { BackgroundEffects } from "../components/BackgroundEffects";
 import { ScrollProgress } from "../components/ScrollProgress";
@@ -79,7 +78,7 @@ export default function Home() {
           <div className="flex justify-center">
             <MagneticElement>
               <button className="bg-green-500 hover:bg-green-400 text-black font-extrabold py-5 px-12 rounded-full text-xl transition-all shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:shadow-[0_0_40px_rgba(34,197,94,0.8)] hover:scale-105 flex items-center gap-3">
-                Quero tomar a pílula verde
+                Quero tomar a p í l u l a verde
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
