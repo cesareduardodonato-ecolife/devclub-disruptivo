@@ -4,6 +4,7 @@ import { ScrollReveal } from "../components/ScrollReveal";
 import { Formacoes } from "../components/Formacoes";
 import { TerminalTutores } from "../components/TerminalTutores";
 import { Depoimentos } from "../components/Depoimentos";
+import CompanyBanner from "../components/CompanyBanner";
 import { CustomCursor } from "../components/CustomCursor";
 import { Footer } from "../components/Footer";
 import { BackgroundEffects } from "../components/BackgroundEffects";
@@ -23,6 +24,7 @@ export default function Home() {
       {/* Hero */}
       <Hero />
       <TechBanner />
+      <CompanyBanner />
 
       {/* Efeito 3D Tilt */}
       <section className="py-32 px-4 max-w-7xl mx-auto relative z-10">
@@ -78,7 +80,7 @@ export default function Home() {
           <div className="flex justify-center">
             <MagneticElement>
               <button className="bg-green-500 hover:bg-green-400 text-black font-extrabold py-5 px-12 rounded-full text-xl transition-all shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:shadow-[0_0_40px_rgba(34,197,94,0.8)] hover:scale-105 flex items-center gap-3">
-                Quero tomar a p í l u l a verde
+                Quero tomar a pílula verde
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
