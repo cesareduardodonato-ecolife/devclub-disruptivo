@@ -24,7 +24,6 @@ export default function Home() {
       {/* Hero */}
       <Hero />
       <TechBanner />
-      <CompanyBanner />
 
       {/* Efeito 3D Tilt */}
       <section className="py-32 px-4 max-w-7xl mx-auto relative z-10">
@@ -67,7 +66,7 @@ export default function Home() {
       <Formacoes />
       <TerminalTutores />
       <Depoimentos />
-      
+      <CompanyBanner />
       {/* Seção Final Botão Magnético */}
       <section className="py-32 px-4 max-w-4xl mx-auto text-center relative z-10">
         <ScrollReveal>
