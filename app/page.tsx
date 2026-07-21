@@ -1,5 +1,6 @@
 "use client";
 
+// 1. IMPORTAÇÕES
 import React, { useState } from "react";
 import { Hero } from "../components/Hero";
 import { TechBanner } from "../components/TechBanner";
@@ -16,7 +17,9 @@ import { MagneticElement } from "../components/MagneticElement";
 import { TiltCard } from "../components/TiltCard";
 
 export default function Home() {
-  // --- ESTADOS DO FORMULÁRIO N8N ---
+  // =========================================================================
+  // ESTADOS DO COMPONENTE (Memória da Página)
+  // =========================================================================
   const [showForm, setShowForm] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSuccess, setFormSuccess] = useState(false);
@@ -26,7 +29,9 @@ export default function Home() {
     whatsapp: ""
   });
 
-  // ---N8N---
+  // =========================================================================
+  // FUNÇÃO DE ENVIO PARA O N8N
+  // =========================================================================
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsSubmitting(true);
@@ -36,9 +41,7 @@ export default function Home() {
 
       await fetch(n8nWebhookUrl, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
         mode: "no-cors"
       });
@@ -58,26 +61,28 @@ export default function Home() {
     }
   }
 
+  // =========================================================================
+  // VISUAL DA PÁGINA (Interface / HTML)
+  // =========================================================================
   return (
-    <main className="min-h-screen text-white overflow-hidden md:cursor-none relative">
+    <main className="min-h-screen text-white overflow-hidden md:cursor-none relative bg-black">
 
-      {/* Efeitos Globais */}
-      <BackgroundEffects />
-      <ScrollProgress />
-      <CustomCursor />
+      {/* --- EFEITOS GLOBAIS --- */}
+      <BackgroundEffects /> 
+      <ScrollProgress />    
+      <CustomCursor />      
 
-      {/* Hero */}
+      {/* --- HERO & TECH BANNER --- */}
       <Hero onOpenMatrix={() => setShowForm(true)} />
       <TechBanner />
 
-      {/* Efeito 3D Tilt */}
-      <section className="py-32 px-4 max-w-7xl mx-auto relative z-10">
+      {/* --- SESSÃO: NOSSOS NÚMEROS --- */}
+      <section className="pt-32 pb-16 px-4 max-w-7xl mx-auto relative z-10">
         <ScrollReveal>
           <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
             Nossos <span className="text-green-400">Números</span>
           </h2>
         </ScrollReveal>
-        <CompanyBanner />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <ScrollReveal delay={0.1}>
@@ -109,12 +114,25 @@ export default function Home() {
         </div>
       </section>
 
+      {/* --- NOVA SESSÃO: BANNER DE EMPRESAS MOVIDO PARA CÁ --- */}
+      <section className="pb-32 relative z-10 overflow-hidden">
+        <ScrollReveal>
+          {/* Título centralizado: Empresas (Branco) Parceiras (Verde) */}
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-white">
+            Empresas <span className="text-green-400">Parceiras</span>
+          </h2>
+        </ScrollReveal>
+        
+        {/* Banner rotativo */}
+        <CompanyBanner />
+      </section>
+
+      {/* --- OUTRAS SESSÕES DA PÁGINA --- */}
       <Formacoes />
       <TerminalTutores />
       <Depoimentos />
-      <CompanyBanner />
 
-      {/* Seção Final Botão Magnético */}
+      {/* --- SESSÃO FINAL: BOTÃO DE CAPTURA --- */}
       <section className="py-32 px-4 max-w-4xl mx-auto text-center relative z-10">
         <ScrollReveal>
           <h2 className="text-5xl md:text-6xl font-black mb-6 tracking-tight">
@@ -141,13 +159,19 @@ export default function Home() {
 
       <Footer />
 
-      {/* ---N8N --- */}
+      {/* ========================================================================= */}
+      {/* JANELA FLUTUANTE (MODAL DE CAPTURA N8N) */}
+      {/* ========================================================================= */}
       {showForm && (
         <div className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/80 backdrop-blur-md px-4">
           <div className="bg-zinc-950 border border-green-500/50 p-8 rounded-2xl max-w-md w-full shadow-[0_0_50px_rgba(34,197,94,0.15)] relative">
 
-            <h3 className="text-green-400 text-2xl font-black mb-2 uppercase tracking-tight">Iniciando Protocolo</h3>
-            <p className="text-zinc-400 text-sm mb-6">Insira suas credenciais para acessar o sistema.</p>
+            <h3 className="text-green-400 text-2xl font-black mb-2 uppercase tracking-tight">
+              Iniciando Protocolo
+            </h3>
+            <p className="text-zinc-400 text-sm mb-6">
+              Insira suas credenciais para acessar o sistema.
+            </p>
 
             {formSuccess ? (
               <div className="py-8 text-center animate-pulse">
@@ -195,7 +219,7 @@ export default function Home() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="flex-1 bg-green-500 text-black font-black uppercase py-3 rounded-lg hover:bg-red-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_15px_rgba(500)] hover:shadow-[0_0_25px_rgba(34,197,94,0.6)]"
+                    className="flex-1 bg-green-500 text-black font-black uppercase py-3 rounded-lg hover:bg-green-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_15px_rgba(34,197,94,0.3)] hover:shadow-[0_0_25px_rgba(34,197,94,0.6)]"
                   >
                     {isSubmitting ? 'Processando...' : 'Acessar Matrix'}
                   </button>
@@ -205,7 +229,6 @@ export default function Home() {
           </div>
         </div>
       )}
-
     </main>
   );
 }
