@@ -2,7 +2,13 @@
 
 import { motion } from "framer-motion";
 
-export const Hero = () => {
+// 1. Avisamos ao TypeScript que esse componente vai receber a função "onOpenMatrix"
+interface HeroProps {
+  onOpenMatrix?: () => void;
+}
+
+// 2. Recebemos a função nas propriedades do componente
+export const Hero = ({ onOpenMatrix }: HeroProps) => {
   return (
     <section className="relative min-h-[95vh] flex flex-col items-center justify-center px-4 overflow-hidden pt-10">
       
@@ -27,7 +33,7 @@ export const Hero = () => {
           </div>
         </motion.div>
 
-        {/* H1 Principal - */}
+        {/* H1 Principal */}
         <motion.div 
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -57,7 +63,11 @@ export const Hero = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
         >
-          <button className="bg-green-500 hover:bg-green-400 text-black font-black py-4 px-10 rounded-sm transition-all shadow-[0_0_20px_rgba(34,197,94,0.6)] hover:shadow-[0_0_40px_rgba(34,197,94,1)] flex items-center justify-center gap-3 uppercase tracking-widest text-sm hover:scale-105">
+          {/* 3. Adicionamos o onClick chamando o onOpenMatrix */}
+          <button 
+            onClick={onOpenMatrix}
+            className="bg-green-500 hover:bg-green-400 text-black font-black py-4 px-10 rounded-sm transition-all shadow-[0_0_20px_rgba(34,197,94,0.6)] hover:shadow-[0_0_40px_rgba(34,197,94,1)] flex items-center justify-center gap-3 uppercase tracking-widest text-sm hover:scale-105"
+          >
             Desconectar da Ilusão
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="square" strokeLinejoin="miter">
               <path d="M5 12h14M12 5l7 7-7 7"/>
