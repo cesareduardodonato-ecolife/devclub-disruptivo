@@ -3,7 +3,7 @@
 import { Star, Quote } from "lucide-react";
 import { ScrollReveal } from "./ScrollReveal";
 
-// Array com os dados fictícios
+// dados fictícios
 const depoimentos = [
   {
     nome: "Thiago Mendes",

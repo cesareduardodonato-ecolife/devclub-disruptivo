@@ -24,7 +24,7 @@ export default function CompanyBanner() {
         }
         .animate-marquee {
           animation: marquee 25s linear infinite;
-          /* O width precisa ser largo o suficiente para conter o dobro dos itens e rolar suavemente */
+          //* O width precisa ser largo o suficiente para conter o dobro dos itens e rolar suavemente *//
           min-width: 200%; 
         }
       `}</style>

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Terminal } from "lucide-react";
 import { ScrollReveal } from "./ScrollReveal";
 
-// O roteiro do nosso terminal hacker (Mantido exatamente como você pediu)
+// Roteiro do terminal
 const linhas = [
   { id: 1, type: "cmd", text: "visitor@devclub:~$ ./conhecer_tutores.sh", delay: 0.5, duration: 1.5 },
   { id: 2, type: "sys", text: "Iniciando varredura no sistema...", delay: 2.2, duration: 0.1 },
@@ -20,23 +20,21 @@ const linhas = [
 
 // ----------------------------------------------------------------------
 // SUB-COMPONENTE: Linha do Terminal
-// Responsável por digitar a linha letra por letra com segurança
-// ----------------------------------------------------------------------
+// Digitar a linha letra por letra 
 const TerminalLine = ({ linha }: { linha: typeof linhas[0] }) => {
   const [texto, setTexto] = useState("");
 
   useEffect(() => {
-    // Se não for um comando (cmd), mostra o texto instantaneamente
     if (linha.type !== "cmd" && linha.type !== "highlight") {
       setTexto(linha.text);
       return;
     }
 
-    // Se for comando (cmd) ou destaque, faz a digitação à prova de balas
+    // Confirmação de letra por letra (efeito de digitação)
     let index = 0;
-    setTexto(""); // Zera para garantir
+    setTexto(""); 
     
-    // Calcula a velocidade baseado na duração que você configurou no array
+    // Calcula a velocidade baseada naconfiguração no array
     const tempoPorLetra = (linha.duration * 1000) / linha.text.length;
 
     const intervalo = setInterval(() => {
@@ -48,11 +46,11 @@ const TerminalLine = ({ linha }: { linha: typeof linhas[0] }) => {
       }
     }, tempoPorLetra);
 
-    // Função de limpeza (evita vazamento de memória e travamentos)
+    // Função de limpeza
     return () => clearInterval(intervalo);
   }, [linha]);
 
-  // Aplica as exatas mesmas cores que você definiu
+  // Aplicação de cores
   const textColor = 
     linha.type === "cmd" ? "text-green-400" :
     linha.type === "sys" ? "text-zinc-500" :
@@ -66,41 +64,38 @@ const TerminalLine = ({ linha }: { linha: typeof linhas[0] }) => {
     </div>
   );
 };
-
-// ----------------------------------------------------------------------
-// COMPONENTE PRINCIPAL: TerminalTutores
-// ----------------------------------------------------------------------
+// Componente principal: TerminalTutores
 export const TerminalTutores = () => {
   const [iniciou, setIniciou] = useState(false);
   const [linhasAtivas, setLinhasAtivas] = useState<number[]>([]);
   const [mostrarCursorFinal, setMostrarCursorFinal] = useState(false);
 
   useEffect(() => {
-    // Só começa a rodar o script quando o usuário ver o terminal na tela
+    // começa a rodar o script
     if (!iniciou) return;
 
-    // Zera o estado (importante para o React Strict Mode)
+    // Zera o estado (React)
     setLinhasAtivas([]);
     setMostrarCursorFinal(false);
 
-    // Cria os agendamentos (timeouts) para cada linha baseando-se no 'delay'
+    // Cria (timeouts) para cada linha
     const timeouts = linhas.map((linha) => {
       return setTimeout(() => {
         setLinhasAtivas((prev) => [...prev, linha.id]);
-      }, linha.delay * 1000); // Multiplica por 1000 pois o seu delay é em segundos
+      }, linha.delay * 1000);
     });
 
-    // O cursor final aparece depois de todo o roteiro acabar (7.5s)
+    // cursor final
     const cursorTimeout = setTimeout(() => {
       setMostrarCursorFinal(true);
     }, 7500);
 
-    // Limpeza de todos os timeouts se o usuário sair da página no meio
+    // Limpeza de todos os timeouts
     return () => {
       timeouts.forEach(clearTimeout);
       clearTimeout(cursorTimeout);
     };
-  }, [iniciou]); // Executa quando 'iniciou' vira true
+  }, [iniciou]); 
 
   return (
     <section className="py-24 px-4 max-w-4xl mx-auto w-full">
@@ -114,9 +109,9 @@ export const TerminalTutores = () => {
       </ScrollReveal>
 
       <ScrollReveal delay={0.2}>
-        {/* A Janela do Terminal */}
+        {/* Janela do Terminal */}
         <motion.div 
-          // Isso aciona a animação de digitação APENAS quando o terminal entra na tela
+          // Aciona a animação de digitação APENAS quando o terminal entra na tela
           onViewportEnter={() => setIniciou(true)}
           viewport={{ once: true, margin: "-100px" }}
           className="bg-[#0f0f0f] rounded-xl border border-zinc-800 overflow-hidden shadow-2xl shadow-green-500/10"
@@ -140,12 +135,12 @@ export const TerminalTutores = () => {
               return <TerminalLine key={id} linha={linhaConfig} />;
             })}
 
-            {/* O cursor piscando no final aguardando o usuário */}
+            {/* O cursor piscando no final */}
             {mostrarCursorFinal && (
               <div className="mt-4 text-green-400 flex items-center">
                 <span className="mr-2">visitor@devclub:~$</span>
                 <motion.div
-                  // Animação de piscar (opacity 1 -> 0 infinito)
+                  // Animação de piscar
                   animate={{ opacity: [1, 0] }}
                   transition={{ repeat: Infinity, duration: 0.8, ease: "linear" }}
                   className="w-2.5 h-5 md:h-6 bg-green-400"
@@ -153,7 +148,7 @@ export const TerminalTutores = () => {
               </div>
             )}
             
-            {/* O cursor piscando enquanto as outras linhas ainda estão sendo digitadas */}
+            {/* O cursor piscando enquanto as outras linhas estão sendo digitadas */}
             {iniciou && !mostrarCursorFinal && (
                <motion.div
                  animate={{ opacity: [1, 0] }}

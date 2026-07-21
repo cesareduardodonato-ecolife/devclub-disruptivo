@@ -1,6 +1,6 @@
 "use client";
 
-// 1. IMPORTAÇÕES
+// Importações de React e componentes
 import React, { useState } from "react";
 import { Hero } from "../components/Hero";
 import { TechBanner } from "../components/TechBanner";
@@ -17,9 +17,7 @@ import { MagneticElement } from "../components/MagneticElement";
 import { TiltCard } from "../components/TiltCard";
 
 export default function Home() {
-  // =========================================================================
-  // ESTADOS DO COMPONENTE (Memória da Página)
-  // =========================================================================
+  // Estados do componente (Memória da Página)
   const [showForm, setShowForm] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSuccess, setFormSuccess] = useState(false);
@@ -29,9 +27,7 @@ export default function Home() {
     whatsapp: ""
   });
 
-  // =========================================================================
-  // FUNÇÃO DE ENVIO PARA O N8N
-  // =========================================================================
+  // Função de envio N8N 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsSubmitting(true);
@@ -60,32 +56,29 @@ export default function Home() {
       setIsSubmitting(false);
     }
   }
-
-  // =========================================================================
-  // VISUAL DA PÁGINA (Interface / HTML)
-  // =========================================================================
+  // (Interface / HTML)
   return (
     <main className="min-h-screen text-white overflow-hidden md:cursor-none relative bg-black">
-      
-      {/* CAMADA DE FUNDO */}
+
+      {/* MATRIX (DevClub) Fundo */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <BackgroundEffects />
         {/* Essa div abaixo coloca uma leve sombra preta por cima da chuva para não atrapalhar a leitura do site */}
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
 
-      {/* --- EFEITOS GLOBAIS --- */}
-      <ScrollProgress />    
-      <CustomCursor />      
+      {/* Efeitos */} 
+      <ScrollProgress />
+      <CustomCursor />
 
-      {/* CAMADA DA FRENTE */}
+      {/* Camada da frente */}
       <div className="relative z-10 flex flex-col w-full">
 
-        {/* --- HERO & TECH BANNER --- */}
+        {/* Hero e TechBanner */}
         <Hero onOpenMatrix={() => setShowForm(true)} />
         <TechBanner />
 
-        {/* --- SESSÃO: NOSSOS NÚMEROS --- */}
+        {/* Nossos Números */}
         <section className="pt-32 pb-16 px-4 max-w-7xl mx-auto relative z-10 w-full">
           <ScrollReveal>
             <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
@@ -123,25 +116,25 @@ export default function Home() {
           </div>
         </section>
 
-        {/* --- NOVA SESSÃO: BANNER DE EMPRESAS --- */}
+        {/* Banner de Empresas  */}
         <section className="pb-32 relative z-10 overflow-hidden w-full">
           <ScrollReveal>
-            {/* Título centralizado: Empresas (Branco) Parceiras (Verde) */}
+            {/* Título centralizado: Empresas Parceiras */}
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-white">
               Empresas <span className="text-green-400">Parceiras</span>
             </h2>
           </ScrollReveal>
-          
-          {/* Banner rotativo */}
+
+          {/* Banner de Empresas Parceiras */}
           <CompanyBanner />
         </section>
 
-        {/* --- OUTRAS SESSÕES DA PÁGINA --- */}
+        {/* Outras Sessões da Página */}
         <Formacoes />
         <TerminalTutores />
         <Depoimentos />
 
-        {/* --- SESSÃO FINAL: BOTÃO DE CAPTURA --- */}
+        {/* Botão de escolha da pílula */}
         <section className="py-32 px-4 max-w-4xl mx-auto text-center relative z-10 w-full">
           <ScrollReveal>
             <h2 className="text-5xl md:text-6xl font-black mb-6 tracking-tight uppercase">
@@ -169,9 +162,7 @@ export default function Home() {
         <Footer />
       </div>
 
-      {/* ========================================================================= */}
-      {/* JANELA FLUTUANTE (MODAL DE CAPTURA N8N) */}
-      {/* ========================================================================= */}
+      {/* Janela Flutuante (N8N) */}
       {showForm && (
         <div className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/80 backdrop-blur-md px-4">
           <div className="bg-zinc-950 border border-green-500/50 p-8 rounded-2xl max-w-md w-full shadow-[0_0_50px_rgba(34,197,94,0.15)] relative">
@@ -222,7 +213,7 @@ export default function Home() {
                   <button
                     type="button"
                     onClick={() => setShowForm(false)}
-                    // --- CORREÇÃO DO BOTÃO PÍLULA VERMELHA ---
+                    // BOTÃO PÍLULA VERMELHA
                     className="flex-1 bg-red-600 text-black font-black uppercase py-3 rounded-lg transition-all shadow-[0_0_15px_rgba(220,38,38,0.4)] hover:shadow-[0_0_25px_rgba(220,38,38,0.7)] hover:text-white"
                   >
                     Pílula Vermelha
