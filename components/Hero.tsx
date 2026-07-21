@@ -2,17 +2,17 @@
 
 import { motion } from "framer-motion";
 
-// 1. Avisamos ao TypeScript que esse componente vai receber a função "onOpenMatrix"
+// Aviso p/ TypeScript que esse componente vai receber a função "onOpenMatrix"
 interface HeroProps {
   onOpenMatrix?: () => void;
 }
 
-// 2. Recebemos a função nas propriedades do componente
+// Recebe a função nas propriedades do componente
 export const Hero = ({ onOpenMatrix }: HeroProps) => {
   return (
     <section className="relative min-h-[95vh] flex flex-col items-center justify-center px-4 overflow-hidden pt-10">
       
-      {/* Sombra escura (Vignette) por trás do texto para garantir que ele nunca suma na chuva verde */}
+      {/* Sombra escura por trás do texto para garantir que ele nunca suma na chuva verde */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[400px] bg-black/60 blur-[60px] rounded-full pointer-events-none z-0" />
 
       <div className="relative z-10 text-center max-w-5xl mx-auto flex flex-col items-center mt-12">
@@ -46,7 +46,7 @@ export const Hero = ({ onOpenMatrix }: HeroProps) => {
           </h1>
         </motion.div>
         
-        {/* Subtítulo Temático */}
+        {/* Subtítulo */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ export const Hero = ({ onOpenMatrix }: HeroProps) => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
         >
-          {/* 3. Adicionamos o onClick chamando o onOpenMatrix */}
+          {/* Adiciona o onClick chamando o onOpenMatrix */}
           <button 
             onClick={onOpenMatrix}
             className="bg-green-500 hover:bg-green-400 text-black font-black py-4 px-10 rounded-sm transition-all shadow-[0_0_20px_rgba(34,197,94,0.6)] hover:shadow-[0_0_40px_rgba(34,197,94,1)] flex items-center justify-center gap-3 uppercase tracking-widest text-sm hover:scale-105"
