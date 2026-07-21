@@ -230,7 +230,7 @@ export default function Home() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="flex-1 bg-green-500 text-black font-black uppercase py-3 rounded-lg hover:bg-green-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_15px_rgba(34,197,94,0.3)] hover:text-white"
+                    className="flex-1 bg-green-500 text-black font-black uppercase py-3 rounded-lg transition-all shadow-[0_0_15px_rgba(34,197,94,0.3)] hover:shadow-[0_0_25px_rgba(34,197,94,0.3)] hover:text-white"
                   >
                     {isSubmitting ? 'Processando...' : 'Pílula Verde'}
                   </button>
