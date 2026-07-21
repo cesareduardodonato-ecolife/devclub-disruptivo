@@ -66,9 +66,17 @@ export default function Home() {
   // =========================================================================
   return (
     <main className="min-h-screen text-white overflow-hidden md:cursor-none relative bg-black">
+    <div className="fixed inset-0 z-0 pointer-events-none">
+        <BackgroundEffects />
+        {/* Essa div abaixo coloca uma leve sombra preta por cima da chuva para não atrapalhar a leitura do site */}
+        <div className="absolute inset-0 bg-black/60"></div>
+      </div>
 
+      <ScrollProgress />    
+      <CustomCursor />
+     
       {/* --- EFEITOS GLOBAIS --- */}
-      <BackgroundEffects /> 
+      <BackgroundEffects/> 
       <ScrollProgress />    
       <CustomCursor />      
 
