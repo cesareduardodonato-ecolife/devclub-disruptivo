@@ -76,6 +76,7 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
             Nossos <span className="text-green-400">Números</span>
           </h2>
+        <CompanyBanner />
         </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
