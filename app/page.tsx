@@ -33,7 +33,7 @@ export default function Home() {
 
     try {
       
-      const n8nWebhookUrl = "http://localhost:5678/webhook-test/f45af074-ddb0-4178-8b79-5918769680f2"; 
+      const n8nWebhookUrl = "http://super-space-doodle-7vq4gvv7wwx92r5pg-5678.app.github.dev//webhook-test/f45af074-ddb0-4178-8b79-5918769680f2"; 
       
       await fetch(n8nWebhookUrl, {
         method: "POST",
