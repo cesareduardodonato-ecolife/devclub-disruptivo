@@ -55,3 +55,9 @@ $ yarn install
 $ npm run dev
 # ou
 $ yarn dev
+
+Abra http://localhost:3000 no seu navegador para ver o resultado.
+
+👨‍💻 Autor
+César Donato
+Desenvolvedor Front-end / Full Stack (Jr) em formação
