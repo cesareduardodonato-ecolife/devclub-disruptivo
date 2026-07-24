@@ -55,6 +55,8 @@ $ yarn install
 $ npm run dev
 Abra http://localhost:3000 no seu navegador para ver o resultado.
 
+***
+
 👨‍💻 Autor
 César Donato (13) 98135-9929
 Desenvolvedor Front-end / Full Stack (Jr) em formação
