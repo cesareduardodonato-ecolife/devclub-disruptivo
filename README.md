@@ -13,7 +13,7 @@ O projeto conta com integração real de dados: os formulários preenchidos envi
 🚀 Tecnologias e Ferramentas
 
 O projeto foi construído utilizando as seguintes tecnologias:
-*[Next.js](https://nextjs.org/): Framework React com renderização otimizada e roteamento moderno.
+*[Next.js](https://nextjs.org/)*: Framework React com renderização otimizada e roteamento moderno.
 *[React](https://react.dev/): Biblioteca JavaScript para construção de interfaces.
 *[TypeScript](https://www.typescriptlang.org/): Tipagem estática para um código mais seguro e fácil manutenção.
 *[Tailwind CSS](https://tailwindcss.com/): Estilização utilitária, responsiva e de alta performance.
@@ -40,7 +40,7 @@ $ cd devclub-disruptivo
 
 #Instale as dependências
 $ npm install
-ou
+** ou 
 $ yarn install
 
 #Execute a aplicação em modo de desenvolvimento
