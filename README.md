@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+💻 DevClub Disruptivo | Landing Page Matrix Theme
 
-## Getting Started
+> Uma Landing Page moderna, de alta conversão e interativa, inspirada no universo cinematográfico de *Matrix*, desenvolvida com foco em performance, experiência do usuário e integração de automação de marketing.
 
-First, run the development server:
+🌐 Acesse a aplicação em produção na Vercel https://devclub-disruptivo.vercel.app
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**************************************************Sobre o Projeto*********************************************************
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Este projeto foi desenvolvido com o objetivo de criar uma experiência de usuário imersiva e disruptiva para um concurso de vagas. A interface utiliza elementos visuais icônicos (como a escolha entre a Pílula Vermelha e a Pílula Verde) combinados com animações fluidas e uma arquitetura orientada a componentes.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+O projeto conta com integração real de dados: os formulários preenchidos enviam os dados diretamente para um fluxo de automação via Webhook utilizando o **n8n**, permitindo o processamento instantâneo das informações dos usuários.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🚀 Tecnologias e Ferramentas
 
-## Learn More
+O projeto foi construído utilizando as seguintes tecnologias:
+[Next.js](https://nextjs.org/): Framework React com renderização otimizada e roteamento moderno.
+[React](https://react.dev/): Biblioteca JavaScript para construção de interfaces.
+[TypeScript](https://www.typescriptlang.org/): Tipagem estática para um código mais seguro e fácil manutenção.
+[Tailwind CSS](https://tailwindcss.com/): Estilização utilitária, responsiva e de alta performance.
+[Framer Motion](https://www.framer.com/motion/): Biblioteca para animações complexas, transições de tela e efeitos visuais sem perda de performance.
+[n8n](https://n8n.io/): Ferramenta de automação de fluxos de trabalho (integração via Webhook API).
+[Vercel](https://vercel.com/): Hospedagem e CI/CD automatizado para o deploy da aplicação.
 
-To learn more about Next.js, take a look at the following resources:
+Principais Desafios e Soluções Técnicas
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Otimização de Animações e Memória: Utilização do Framer Motion com gerenciamento de ciclo de vida dos componentes (`useEffect` e `cleanups`) para evitar *memory leaks* (vazamento de memória) no terminal interativo.
+Integração Assíncrona e Feedbacks de UI: Tratamento do envio de dados via Webhook com tratamento de erros, tempo de resposta e feedback visual (loading/sucesso) para o usuário.
+Ajuste de Internacionalização (i18n): Configuração nativa de idioma (`pt-BR`) no `layout.tsx` para evitar que navegadores tentem traduzir a página e quebrem a estrutura do DOM (problema com classes do Tailwind e React).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+⚙️ Executar o projeto localmente
 
-## Deploy on Vercel
+Pré-requisitos: Ter o [Node.js](https://nodejs.org/) instalado em sua máquina.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+...bash
+# Clone este repositório
+$ git clone https://github.com/cesareduardodonato-ecolife/devclub-disruptivo.git
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Acesse a pasta do projeto
+$ cd devclub-disruptivo
+
+# Instale as dependências
+$ npm install
+# ou
+$ yarn install
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm run dev
+# ou
+$ yarn dev
