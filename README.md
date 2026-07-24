@@ -51,7 +51,7 @@ $ npm install
 # ou
 $ yarn install
 
-# 4. Execute a aplicação em modo de desenvolvimento
+# 4. Execute a aplicação em modo desenvolvedor
 $ npm run dev
 # ou
 $ yarn dev
