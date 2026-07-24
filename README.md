@@ -13,13 +13,13 @@ O projeto conta com integração real de dados: os formulários preenchidos envi
 🚀 Tecnologias e Ferramentas
 
 O projeto foi construído utilizando as seguintes tecnologias:
-[Next.js](https://nextjs.org/): Framework React com renderização otimizada e roteamento moderno.
-[React](https://react.dev/): Biblioteca JavaScript para construção de interfaces.
-[TypeScript](https://www.typescriptlang.org/): Tipagem estática para um código mais seguro e fácil manutenção.
-[Tailwind CSS](https://tailwindcss.com/): Estilização utilitária, responsiva e de alta performance.
-[Framer Motion](https://www.framer.com/motion/): Biblioteca para animações complexas, transições de tela e efeitos visuais sem perda de performance.
-[n8n](https://n8n.io/): Ferramenta de automação de fluxos de trabalho (integração via Webhook API).
-[Vercel](https://vercel.com/): Hospedagem e CI/CD automatizado para o deploy da aplicação.
+*[Next.js](https://nextjs.org/): Framework React com renderização otimizada e roteamento moderno.
+*[React](https://react.dev/): Biblioteca JavaScript para construção de interfaces.
+*[TypeScript](https://www.typescriptlang.org/): Tipagem estática para um código mais seguro e fácil manutenção.
+*[Tailwind CSS](https://tailwindcss.com/): Estilização utilitária, responsiva e de alta performance.
+*[Framer Motion](https://www.framer.com/motion/): Biblioteca para animações complexas, transições de tela e efeitos visuais sem perda de performance.
+*[n8n](https://n8n.io/): Ferramenta de automação de fluxos de trabalho (integração via Webhook API).
+*[Vercel](https://vercel.com/): Hospedagem e CI/CD automatizado para o deploy da aplicação.
 
 Principais Desafios e Soluções Técnicas
 
@@ -32,18 +32,18 @@ Ajuste de Internacionalização (i18n): Configuração nativa de idioma (`pt-BR`
 Pré-requisitos: Ter o [Node.js](https://nodejs.org/) instalado em sua máquina.
 
 ...bash
-# Clone este repositório
+#Clone este repositório
 $ git clone https://github.com/cesareduardodonato-ecolife/devclub-disruptivo.git
 
-# Acesse a pasta do projeto
+#Acesse a pasta do projeto
 $ cd devclub-disruptivo
 
-# Instale as dependências
+#Instale as dependências
 $ npm install
-# ou
+ou
 $ yarn install
 
-# Execute a aplicação em modo de desenvolvimento
+#Execute a aplicação em modo de desenvolvimento
 $ npm run dev
 # ou
 $ yarn dev
