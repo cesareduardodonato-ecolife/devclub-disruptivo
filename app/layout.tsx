@@ -12,9 +12,25 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "UAU - Concurso DevClub ",
-  description: "Página criada para o concurso do DevClub por Cesar Eduardo Paiva Donato - ",
+export const metadata = {
+  title: "DevClub Disruptivo | Tome a Pílula Verde",
+  description: "Landing Page interativa e disruptiva com temática Matrix.",
+  openGraph: {
+    title: "DevClub Disruptivo | Tome a Pílula Verde",
+    description: "Landing Page interativa e disruptiva com temática Matrix.",
+    url: "https://devclub-disruptivo.vercel.app",
+    siteName: "DevClub Disruptivo",
+    images: [
+      {
+        url: "/preview.png", // A foto que você colocou na pasta public
+        width: 1200,
+        height: 630,
+        alt: "Tela inicial do projeto DevClub Disruptivo com tema Matrix",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
