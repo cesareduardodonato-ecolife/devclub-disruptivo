@@ -53,7 +53,6 @@ $ yarn install
 
 # 4. Execute a aplicação em modo de desenvolvimento
 $ npm run dev
-Abra http://localhost:3000 no seu navegador para ver o resultado.
-***
 # ou
+$ yarn dev
 $ yarn dev
