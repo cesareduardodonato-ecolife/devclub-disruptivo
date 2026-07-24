@@ -8,9 +8,9 @@
 
 ## 🖥️ Sobre o Projeto
 
-Este projeto foi desenvolvido com o objetivo de criar uma experiência de usuário imersiva e disruptiva para um concurso de vagas. A interface utiliza elementos visuais icônicos (como a escolha entre a Pílula Vermelha e a Pílula Verde) combinados com animações fluidas e uma arquitetura orientada a componentes.
+Este projeto foi desenvolvido com o objetivo de criar uma experiência de usuário imersiva e disruptiva para captação de leads. A interface utiliza elementos visuais icônicos (como a escolha entre a Pílula Vermelha e a Pílula Verde) combinados com animações fluidas e uma arquitetura orientada a componentes.
 
-Além do visual impactante, o projeto conta com integração real de dados: os formulários preenchidos enviam os dados diretamente para um fluxo de automação via Webhook utilizando o **n8n**, permitindo o processamento instantâneo das informações dos usuários.
+Além do visual impactante, o projeto conta com integração real de dados: os formulários preenchidos enviam os dados diretamente para um fluxo de automação via Webhook utilizando o **n8n**, permitindo o processamento instantâneo das informações dos leads.
 
 ---
 
@@ -54,5 +54,4 @@ $ yarn install
 # 4. Execute a aplicação em modo de desenvolvimento
 $ npm run dev
 # ou
-$ yarn dev
 $ yarn dev
