@@ -44,9 +44,6 @@ O projeto foi construído utilizando as seguintes tecnologias:
 *   **Ajuste de Internacionalização (i18n):** Configuração nativa de idioma (`pt-BR`) no `layout.tsx` para evitar que navegadores tentem traduzir a página e quebrem a estrutura do DOM (problema com classes do Tailwind e React).
 
 ---
----
-
----
 
 ## 🚀 Apoie o Desenvolvimento
 
@@ -59,7 +56,6 @@ O seu apoio é fundamental para manter o foco na criação de aplicações cada 
 > **Nota:** Sistemas financeiros às vezes bloqueiam o redirecionamento direto. Se o botão acima apresentar erro, copie e cole o link seguro abaixo diretamente no seu navegador:
 > `https://pag.ae/824DZ8SKs`
 
----
 ---
 
 ## ⚙️ Como executar o projeto localmente
