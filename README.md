@@ -46,6 +46,8 @@ O projeto foi construído utilizando as seguintes tecnologias:
 ---
 ---
 
+---
+
 ## 🚀 Apoie o Desenvolvimento
 
 A arquitetura e a manutenção deste projeto fazem parte da minha evolução constante como Desenvolvedor Full Stack. Se o código, a estrutura ou as soluções apresentadas aqui te ajudaram de alguma forma, considere incentivar o projeto!
@@ -54,6 +56,10 @@ O seu apoio é fundamental para manter o foco na criação de aplicações cada 
 
 [![Apoiar com PagSeguro](https://img.shields.io/badge/Apoiar_com-PagSeguro-00A868?style=for-the-badge&logo=pagseguro&logoColor=white)](https://pag.ae/824DZ8SKs)
 
+> **Nota:** Sistemas financeiros às vezes bloqueiam o redirecionamento direto. Se o botão acima apresentar erro, copie e cole o link seguro abaixo diretamente no seu navegador:
+> `https://pag.ae/824DZ8SKs`
+
+---
 ---
 
 ## ⚙️ Como executar o projeto localmente
