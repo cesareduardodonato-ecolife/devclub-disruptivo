@@ -25,6 +25,15 @@ O projeto foi construído utilizando as seguintes tecnologias:
 - **[Framer Motion](https://www.framer.com/motion/)**: Biblioteca para animações complexas, transições de tela e efeitos visuais sem perda de performance.
 - **[n8n](https://n8n.io/)**: Ferramenta de automação de fluxos de trabalho (integração via Webhook API).
 - **[Vercel](https://vercel.com/)**: Hospedagem e CI/CD automatizado para o deploy da aplicação.
+- <div align="center">
+  
+  ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+  ![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white)
+  ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+  ![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
+  ![VS Code](https://img.shields.io/badge/VS_Code-0078D4?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+
+</div>
 
 ---
 
